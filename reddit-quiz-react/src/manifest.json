@@ -1,0 +1,26 @@
+{
+  "name": "Reddit Quiz Demo",
+  "description": "Reddit Quiz",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["./jquery.js", "./background.js"]
+  },
+  "options_page": "./options.html",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["./jquery.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "clipboardWrite",
+    "http://*.reddit.com/*",
+    "https://*.reddit.com/*"
+  ]
+}
